@@ -3,11 +3,12 @@ import React,{useState} from 'react'
 export default function About() {
     const [myStyle, setmyStyle] =useState( {
         color: 'white',
-        backgroundColor:'black'
+        backgroundColor:'black',
+        border: '2px solid white'
     }) 
     const [btntext, setBtnText] = useState("Enable light Mode")
     const toggleStyle = ()=> {
-        if(myStyle.color =='white'){
+        if(myStyle.color ==='white'){
             setmyStyle({
                 color: 'black',
                 backgroundColor:'white'
@@ -24,7 +25,7 @@ export default function About() {
     }
 
     return (
-    <div className='container' style={myStyle}>
+    <div className='container' style={myStyle} >
         <h1 className="my-4">About Us</h1>
             <div className="accordion my-4" id="accordionExample">
         <div className="accordion-item">
