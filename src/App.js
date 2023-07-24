@@ -1,10 +1,17 @@
 
 import React, { useState } from 'react';
 import './App.css';
-//import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 function App() {
   const[mode, setMode] = useState('light'); //state tells wheather dark mopde is enabled or not
@@ -34,12 +41,19 @@ const showAlert=(message,type)=>{
   }
   return (
     <>
+    <Router>
    <Navbar title="Textutils" AboutText="About" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert} />
-    <TextForm heading="Enter the Text" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/> 
-   {/* <About></About> */}
+    <div className="container my-3">
+    <Routes>
+    <Route exact path='/About' element={<About/>} />
+    <Route exact path="/Home" element={<TextForm heading="Enter the Text" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/>  }/>
+          
+         
+    </Routes>
 
-   
+    </div>
+    </Router>
     </>
  
 
