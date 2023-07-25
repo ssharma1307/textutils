@@ -13,7 +13,7 @@ import {
 
 
 function App() {
-  const[mode, setMode] = useState('light'); //state tells wheather dark mopde is enabled or not
+  const[mode, setMode] = useState('light');
   const[alert, setAlert] = useState(null); 
 
 const showAlert=(message,type)=>{
@@ -45,8 +45,8 @@ const showAlert=(message,type)=>{
     <Alert alert={alert} />
     <div className="container my-3">
     <Routes>
-    <Route exact path='/About' element={<About/>} />
-    <Route exact path="/Home" element={<TextForm heading="Enter the Text" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/>  }/>
+    <Route exact path='/About' element={<About mode={mode} />} />
+    <Route exact path="/Home" element={<TextForm heading="Play with your text here!!" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/>  }/>
           
          
     </Routes>
