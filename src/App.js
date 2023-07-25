@@ -46,7 +46,7 @@ const showAlert=(message,type)=>{
     <div className="container my-3">
     <Routes>
     <Route exact path='/About' element={<About mode={mode} />} />
-    <Route exact path="/Home" element={<TextForm heading="Play with your text here!!" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/>  }/>
+    <Route exact path="/Home" element={<TextForm heading="Play with your text here!!" mode={mode} toggleMode={toggleMode} showAlert={showAlert} />  }/>
           
          
     </Routes>
